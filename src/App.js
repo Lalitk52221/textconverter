@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import Navbar from './Component/Navbar';
+import Textconverter from './Component/Textconverter';
 
 function App() {
+  const [mode,setMode] =useState('light');
+
+const togglemode=()=>{
+  if (mode==='light'){
+    setMode('dark')
+    document.body.style.backgroundColor="black"
+    document.body.style.color="white"
+}
+else{
+  setMode('light')
+  document.body.style.backgroundColor="white"
+  document.body.style = 'black'
+}
+}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <Navbar title="Text-Converter" mode={mode} togglemode={togglemode}/>
+    <Textconverter mode={mode}/>
+ </>   
+)
 }
 
 export default App;
