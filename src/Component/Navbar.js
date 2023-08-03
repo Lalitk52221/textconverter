@@ -32,10 +32,19 @@ export default function Navbar(props){
           <a className="nav-link disabled">Disabled</a>
         </li>
       </ul>
-          <div className="form-check form-switch  mx-5 ">
-            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.togglemode}/>
+        <div className='d-flex'>
+          <div className='bg-primary rounded mx-1' onClick={()=>{props.togglemode('primary')}} style={{cursor:'pointer',height:'20px',border:'2px solid black', width:'20px'}}></div>
+          <div className='bg-danger rounded mx-1'  onClick={()=>{props.togglemode('danger')}} style={{cursor:'pointer',height:'20px',border:'2px solid black',width:'20px'}}></div>
+          <div className='bg-success rounded mx-1' onClick={()=>{props.togglemode('success')}} style={{cursor:'pointer',height:'20px',border:'2px solid black',width:'20px'}}></div>
+          <div className='bg-warning rounded mx-1' onClick={()=>{props.togglemode('warning')}} style={{cursor:'pointer',height:'20px',border:'2px solid black', width:'20px'}}></div>
+          <div className='bg-light rounded mx-1' onClick={()=>{props.togglemode('light')}} style={{cursor:'pointer',height:'20px',border:'2px solid black', width:'20px'}}></div>
+          <div className='bg-dark rounded mx-1' onClick={()=>{props.togglemode('dark')}} style={{cursor:'pointer',height:'20px',border:'2px solid black', width:'20px'}}></div>
+          
+        </div>
+          {/* <div className="form-check form-switch  mx-5 ">
+            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={()=>{props.togglemode(null)}}/>
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable dark Mode</label>
-          </div>
+          </div> */}
       <form className="d-flex" role="search">
      
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
